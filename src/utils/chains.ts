@@ -17,6 +17,7 @@ export enum ChainId {
   ZORA_MAINNET = 7777777,
   WORLDCHAIN_MAINNET = 480,
   SEPOLIA = 11155111,
+  HAUST = 1570754601,
 }
 
 // subgraph does not support string enums, hence these constants
@@ -33,6 +34,7 @@ const ZKSYNC_ERA_NETWORK_NAME = 'zksync-era'
 const ZORA_MAINNET_NETWORK_NAME = 'zora-mainnet'
 const WORLDCHAIN_MAINNET_NETWORK_NAME = 'worldchain-mainnet'
 const SEPOLIA_NETWORK_NAME = 'sepolia'
+const HAUST_NETWORK_NAME = 'haust'
 
 // Note: All token and pool addresses should be lowercased!
 export class SubgraphConfig {
@@ -452,6 +454,43 @@ export function getSubgraphConfig(): SubgraphConfig {
         '0xaa8e23fb1079ea71e0a56f48a2aa51851d8433d0', // USDT
         '0x1f9840a85d5af5bf1d1762f925bdaddc4201f984', // UNI,
       ],
+      tokenOverrides: [],
+      poolsToSkip: [],
+      poolMappings: [],
+    }
+  } else if (selectedNetwork == HAUST_NETWORK_NAME) {
+    return {
+      factoryAddress: '0x0290d31c5a04cf8C6db8df5ba7725118e4A67512',
+      stablecoinWrappedNativePoolAddress: '0x87C52b69F547e46fC8125020cB983E26b7423C6f', // @todo WHAUST-USDC 1.5% pool
+      stablecoinIsToken0: false,
+      wrappedNativeAddress: '0x6C25C1Cb4b8677982791328471be1bFB187687c1', // WHAUST
+      // minimumNativeLocked: BigDecimal.fromString('20'),
+      minimumNativeLocked: BigDecimal.fromString('0'),
+      stablecoinAddresses: [
+        '0x793c22920F95758603f8FBe14f61dC674CEe433f', // USDT
+        '0x8BAa0E9edaf3DA44Fe288466c39fbEC71abC36c0', // USDC
+      ],
+      whitelistTokens: [
+        '0x6C25C1Cb4b8677982791328471be1bFB187687c1', // WHAUST
+        '0x793c22920F95758603f8FBe14f61dC674CEe433f', // USDT
+        '0x8BAa0E9edaf3DA44Fe288466c39fbEC71abC36c0', // USDC
+        '0x48C3C36CE1DF7d5852FB4cda746015a9971A882E', // WETH
+        '0xeF16811d63E3551c424A3880386a0148B0Fa98a3', // WBTC 
+      ],
+      // tokenOverrides: [
+      //   {
+      //     address: Address.fromString('0x314e5d40a123F4Efdb096bB716767C905A7DcA97'),
+      //     symbol: 'WHAUST',
+      //     name: 'Wrapped Haust',
+      //     decimals: BigInt.fromI32(18),
+      //   },
+      //   {
+      //     address: Address.fromString('0xc33299bb1beb4dd431a4cc8f4174395f0d1d29e7'),
+      //     symbol: 'USDC',
+      //     name: 'USD Coin',
+      //     decimals: BigInt.fromI32(6),
+      //   },
+      // ],
       tokenOverrides: [],
       poolsToSkip: [],
       poolMappings: [],
