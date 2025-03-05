@@ -4,25 +4,25 @@ import { exponentToBigDecimal, safeDiv } from '../utils/index'
 import { Bundle, Pool, Token } from './../types/schema'
 import { ONE_BD, ZERO_BD, ZERO_BI } from './constants'
 
-export const WETH_ADDRESS = '0x314e5d40a123f4efdb096bb716767c905a7dca97'
+export const WETH_ADDRESS = '0x6c25c1cb4b8677982791328471be1bfb187687c1'
 //changed address
-export const USDC_WETH_03_POOL = '0x05C108C0Db67e0A7245182B3A4A855824Ca927Ad'
+export const USDC_WETH_03_POOL = '0xaa8db11c2fccc8d979652d7853e3ebaf3b0774da'
 
-export const STABLECOIN_IS_TOKEN0 = false
+export const STABLECOIN_IS_TOKEN0 = true
 
 // token where amounts should contribute to tracked volume and liquidity
 // usually tokens that many tokens are paired with s
 export const WHITELIST_TOKENS: string[] = [
-  WETH_ADDRESS, // WETH
-  '0x1a1af9c78704d3a0ab9e031c92e7bd808711a582', // WETH
-  '0x25527108071d56bcbe025711cd93ee1e364b03ea', // BTC
-  '0xf7fdb9d99ff104db82cc98dfd43602cca4bb7c90', // USDT
-  '0xc33299bb1beb4dd431a4cc8f4174395f0d1d29e7', // USDC
+  WETH_ADDRESS, // WHAUST
+  '0x48c3c36ce1df7d5852fb4cda746015a9971a882e', // WETH
+  '0x595bc82909f2311cf19e865bc82e7930b103540c', // BTC
+  '0x87054392461f52a513d83ef2e06af50f4e2f6614', // USDT
+  '0x1afb500affbcc8a7fc8ab0f5c4d06c59ac87b111', // USDC
 ]
 
 export const STABLE_COINS: string[] = [
-  '0xf7fdb9d99ff104db82cc98dfd43602cca4bb7c90', // USDT
-  '0xc33299bb1beb4dd431a4cc8f4174395f0d1d29e7', // USDC
+  '0x87054392461f52a513d83ef2e06af50f4e2f6614', // USDT
+  '0x1afb500affbcc8a7fc8ab0f5c4d06c59ac87b111', // USDC
 ]
 
 // mika export const MINIMUM_ETH_LOCKED = BigDecimal.fromString('60')

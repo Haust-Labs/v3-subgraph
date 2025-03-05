@@ -76,5 +76,11 @@
       "address": "0x0227628f3F023bb0B980b67D528571c95c6DaC1c",
       "startBlock": 3518270
     }
+  },
+  "haust": {
+    "Factory": {
+      "address": "0x0290d31C5A04cF8C6dB8dF5ba7725118e4A67512",
+      "startBlock": 80000
+    }
   }
 }
