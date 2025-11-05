@@ -17,7 +17,9 @@ export enum ChainId {
   ZORA_MAINNET = 7777777,
   WORLDCHAIN_MAINNET = 480,
   SEPOLIA = 11155111,
-  HAUST = 1570754601,
+  HAUST_TESTNET = 1523903251,
+  HAUST = 1008818835,
+  HAUST_MAINNET = 3864,
 }
 
 // subgraph does not support string enums, hence these constants
@@ -34,7 +36,9 @@ const ZKSYNC_ERA_NETWORK_NAME = 'zksync-era'
 const ZORA_MAINNET_NETWORK_NAME = 'zora-mainnet'
 const WORLDCHAIN_MAINNET_NETWORK_NAME = 'worldchain-mainnet'
 const SEPOLIA_NETWORK_NAME = 'sepolia'
-const HAUST_NETWORK_NAME = 'haust'
+const HAUST_NETWORK_NAME = 'haust-testnet'
+const HAUST_DEVNET_NETWORK_NAME = 'haust'
+const HAUST_MAINNET_NETWORK_NAME = 'haust-mainnet'
 
 // Note: All token and pool addresses should be lowercased!
 export class SubgraphConfig {
@@ -491,6 +495,50 @@ export function getSubgraphConfig(): SubgraphConfig {
       //     decimals: BigInt.fromI32(6),
       //   },
       // ],
+      tokenOverrides: [],
+      poolsToSkip: [],
+      poolMappings: [],
+    }
+  } else if (selectedNetwork == HAUST_DEVNET_NETWORK_NAME) {
+    return {
+      factoryAddress: '0xcf209f334474f339bbf388bc3f4454ad5a35a058',
+      stablecoinWrappedNativePoolAddress: '0xb02aa67aedcfc8563cea37e42b9874d5ee80de16', // @todo WHAUST-USDC 1.5% pool
+      stablecoinIsToken0: false,
+      wrappedNativeAddress: '0x2c990daddaf3b760443b512da9f001f721951438', // WHAUST
+      minimumNativeLocked: BigDecimal.fromString('0'),
+      stablecoinAddresses: [
+        '0xb9882bc4f209d6bb26e971874779aa7447f82aa7', // USDT
+        '0xad73118d8a179c17a2653e7342977e82e54cc4a7', // USDC
+      ],
+      whitelistTokens: [
+        '0x2c990daddaf3b760443b512da9f001f721951438', // WHAUST
+        '0xb9882bc4f209d6bb26e971874779aa7447f82aa7', // USDT
+        '0xad73118d8a179c17a2653e7342977e82e54cc4a7', // USDC
+        '0xe6a3136f060cc22a866abee3e3725311a600f3ee', // WETH
+        '0x75b69949d11013856e60b7386c28163daed1de81', // WBTC
+      ],
+      tokenOverrides: [],
+      poolsToSkip: [],
+      poolMappings: [],
+    }
+  } else if (selectedNetwork == HAUST_MAINNET_NETWORK_NAME) {
+    return {
+      factoryAddress: '0xfa34400b1b8dcfd909eac942053097ed5903f1d3',
+      stablecoinWrappedNativePoolAddress: '0x14f085ba6ba3b0fabb4c2995742137b7ea57a44e', // @todo WHAUST-USDC 1.5% pool
+      stablecoinIsToken0: false,
+      wrappedNativeAddress: '0x6c25c1cb4b8677982791328471be1bfb187687c1', // WHAUST
+      minimumNativeLocked: BigDecimal.fromString('0'),
+      stablecoinAddresses: [
+        '0x1e4a5963abfd975d8c9021ce480b42188849d41d', // USDT
+        '0xa8ce8aee21bc2a48a5ef670afcc9274c7bbbc035', // USDC
+      ],
+      whitelistTokens: [
+        '0x6c25c1cb4b8677982791328471be1bfb187687c1', // WHAUST
+        '0x1e4a5963abfd975d8c9021ce480b42188849d41d', // USDT
+        '0xa8ce8aee21bc2a48a5ef670afcc9274c7bbbc035', // USDC
+        '0x5a77f1443d16ee5761d310e38b62f77f726bc71c', // WETH
+        '0xea034fb02eb1808c2cc3adbc15f447b93cbe08e1', // WBTC
+      ],
       tokenOverrides: [],
       poolsToSkip: [],
       poolMappings: [],

@@ -76,5 +76,17 @@
       "address": "0x0227628f3F023bb0B980b67D528571c95c6DaC1c",
       "startBlock": 3518270
     }
+  },
+  "haust": {
+    "Factory": {
+      "address": "0xCf209F334474f339bBf388BC3F4454AD5A35A058",
+      "startBlock": 76196
+    }
+  },
+  "haust-mainnet": {
+    "Factory": {
+      "address": "0xfa34400b1b8dcfd909eac942053097ed5903f1d3",
+      "startBlock": 95691
+    }
   }
 }

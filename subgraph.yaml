@@ -9,11 +9,11 @@ features:
 dataSources:
   - kind: ethereum/contract
     name: Factory
-    network: sepolia
+    network: haust-mainnet
     source:
-      address: "0x0227628f3F023bb0B980b67D528571c95c6DaC1c"
+      address: '0xfa34400b1b8dcfd909eac942053097ed5903f1d3'
       abi: Factory
-      startBlock: 3518270
+      startBlock: 95691
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.7
@@ -39,7 +39,7 @@ dataSources:
 templates:
   - kind: ethereum/contract
     name: Pool
-    network: sepolia
+    network: haust-mainnet
     source:
       abi: Pool
     mapping:
