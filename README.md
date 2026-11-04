@@ -6,6 +6,24 @@ Synced at: https://thegraph.com/hosted-service/subgraph/ianlapham/uniswap-v3-sub
 
 Pending Changes at same URL
 
+### Deploying to Haust mainnet
+
+The graph-node admin port and the IPFS API have no public hosts, so `create-local` and `deploy-local` reach them through `kubectl port-forward`. You need access to the `mainnet-k8s` cluster.
+
+In two separate terminals, keep the port-forwards running:
+
+```
+kubectl -n dex port-forward svc/graph-node-service 8020
+kubectl -n dex port-forward svc/ipfs-service 5001
+```
+
+Then, in a third terminal:
+
+```
+yarn create-local   # only when the subgraph name does not exist yet
+yarn deploy-local
+```
+
 ### Running Unit Tests
 
 1. Install [Docker](https://docs.docker.com/get-docker/) if you don't have it already
